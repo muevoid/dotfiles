@@ -1,0 +1,3 @@
+#!/bin/sh
+
+curl https://freenode.logbot.info/kisslinux/$(date +%Y%m%d)/raw

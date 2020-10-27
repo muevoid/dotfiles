@@ -1,0 +1,56 @@
+# Kiss Repos
+
+export KISS_PATH=''
+KISS_PATH=$KISS_PATH:$HOME/Documents/repo/core
+KISS_PATH=$KISS_PATH:$HOME/Documents/dvdrepo
+KISS_PATH=$KISS_PATH:$HOME/Documents/repo/extra
+KISS_PATH=$KISS_PATH:$HOME/Documents/repo/base
+KISS_PATH=$KISS_PATH:$HOME/Documents/repo/game
+KISS_PATH=$KISS_PATH:$HOME/Documents/repo/wayland
+
+# Wayland socket
+if test -z "${XDG_RUNTIME_DIR}"; then
+    export XDG_RUNTIME_DIR=/tmp/01-runtime-dir
+    if ! test -d "${XDG_RUNTIME_DIR}"; then
+        mkdir "${XDG_RUNTIME_DIR}"
+    fi
+fi
+
+
+
+# Path
+PATH=$HOME/.local/bin:$PATH
+#PATH=$HOME/.emacs.d/bin:$PATH
+
+# Aliases and such
+export ENV="$HOME/.ashrc"
+export BROWSER="wyeb"
+export EDITOR="vim"
+export VISUAL="foot vim"
+export USER="muevoid"
+export HOSTNAME="muevoid"
+export PF_INFO="ascii title os host kernel uptime pkgs memory editor shell palette"
+export BEMENU_OPTS="--nb=#282A36 --nf=#F8F8F2 --tb=#282A36 --tf=#F8F8F2 --hb=#6272A4 --hf=#F8F8F2 --sb=#6272A4"
+export PASH_CLIP="wl-copy -o"
+
+# Home clean up
+export LESSHISTFILE="-"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GOPATH="$XDG_DATA_HOME/go"
+
+# Wayland
+export SDL_VIDEODRIVER=wayland
+export GDK_BACKEND=wayland
+
+# Fix fzf
+export FZF_DEFAULT_COMMAND='set -o foobar; find * -type f'
+
+# Build Environment
+
+export CC="clang"
+export CXX="clang++"
+export MAKEFLAGS="-j8"
+export CFLAGS="-march=x86-64 -mtune=generic -pipe -Os"
+export CXXFLAGS="-march=x86-64 -mtune=generic -pipe -Os"

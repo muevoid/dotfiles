@@ -1,0 +1,16 @@
+#!/bin/sh
+
+running=1
+
+while [ $running == 1 ]
+do
+
+sleep 5s
+capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
+
+if [ "$capacity" -lt 25 ];
+then
+wayherb "Warning batter at $capacity"
+running=0
+fi
+done

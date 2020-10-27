@@ -1,0 +1,10 @@
+**/.ccls-cache
+**/ccls-cache
+**/.ccls-root
+**/output.pdf
+**/callgrind.out.*
+**/*.o
+**/*.so
+**/*.a
+**/compile_commands.json
+**/*.swp
