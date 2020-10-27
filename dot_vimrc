@@ -102,7 +102,6 @@ set softtabstop=4
 
 set textwidth=80
 set colorcolumn=80
-"set columns=80
 highlight ColorColumn ctermbg=darkgrey
 
 set confirm
