@@ -15,6 +15,11 @@ set $right l
 exec foot --server
 set $term footclient
 
+# Test borders
+border_images.focused /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
+border_images.unfocused /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
+border_images.focused_inactive /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
+
 # Your preferred application launcher
 set $menu bemenu-run
 
@@ -31,13 +36,12 @@ exec batterywarning
 exec wbg /home/muevoid/Documents/Wallpapers/wallpaper.png
 
 #smart_gaps on
-gaps inner 3
+gaps inner 35
 gaps outer 0
 hide_edge_borders smart
-default_border pixel 1
-#for_window [app_id="^.*"] border pixel 1
+default_border pixel 0
+for_window [app_id="^.*"] border pixel 0
 #for_window [app_id=".*"] title_format "<span font='Tewi 0'> </span>"
-hide_edge_borders --i3 smart
 titlebar_padding 5
 
 # Key bindings
@@ -177,22 +181,22 @@ bindsym $mod+r mode "resize"
 
 
 # Status Bar:
-bar {
-    position top
+#bar {
+#    position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+#    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
 
-    gaps 3
+#    gaps 3
 
-    colors {
-        statusline #F8F8F2
-        background #282A36
-       inactive_workspace #282A36 #282A36 #BFBFBF
-    focused_workspace #44475A #44475A #F8F8F2
-    }
-}
+#    colors {
+#        statusline #F8F8F2
+#        background #282A36
+#       inactive_workspace #282A36 #282A36 #BFBFBF
+#    focused_workspace #44475A #44475A #F8F8F2
+#    }
+#}
 
 client.focused #6272A4 #6272A4 #F8F8F2
 client.unfocused #282A36 #282A36 #BFBFBF
