@@ -71,7 +71,7 @@ nn <silent> <Leader>a :LSClientWorkspaceSymbol<CR>
 nn <silent> <Leader>h :LSClientShowHover<CR>
 
 " Compile roff file
-nn <silent> <Leader>g :!pdfroff -e % > $(echo %.pdf <bar> sed 's/roff\.//g')<CR>
+nn <silent> <Leader>g :!pdfroff -ms -e % > $(echo %.pdf <bar> sed 's/roff\.//g')<CR>
 
 " Colorscheme
 set background=dark
