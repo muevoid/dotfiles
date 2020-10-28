@@ -26,6 +26,7 @@ let g:lightline = {
             \}
 Plug 'romgrk/doom-one.vim' " One of the best themes
 Plug 'jreybert/vimagit'
+Plug 'ap/vim-css-color' " Preview colors
 
 " Writing things
 Plug 'reedes/vim-pencil'
