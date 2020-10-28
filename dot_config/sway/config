@@ -28,16 +28,16 @@ for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] sticky enable
 
 # Services
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+exec yambar
 exec batterywarning
 
 # Sound and brightness keybinds
-bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
-bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
-bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
+bindsym XF86AudioMute exec amixer sset Master toggle
 
-bindsym $mod+e exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-bindsym $mod+Shift+e exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+bindsym $mod+e exec light -U 5
+bindsym $mod+Shift+e exec light -A 5
 
 #Default workspace type
 
@@ -109,8 +109,8 @@ titlebar_padding 5
 # Workspaces:
 #
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
+    bindsym $mod+1 workspace main
+    bindsym $mod+2 workspace music
     bindsym $mod+3 workspace number 3
     bindsym $mod+4 workspace number 4
     bindsym $mod+5 workspace number 5
@@ -120,8 +120,8 @@ titlebar_padding 5
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+1 move container to workspace main
+    bindsym $mod+Shift+2 move container to workspace music
     bindsym $mod+Shift+3 move container to workspace number 3
     bindsym $mod+Shift+4 move container to workspace number 4
     bindsym $mod+Shift+5 move container to workspace number 5
