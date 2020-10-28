@@ -36,7 +36,7 @@ exec batterywarning
 exec wbg /home/muevoid/Documents/Wallpapers/wallpaper.png
 
 #smart_gaps on
-gaps inner 35
+gaps inner 17
 gaps outer 0
 hide_edge_borders smart
 default_border pixel 0
