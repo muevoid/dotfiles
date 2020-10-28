@@ -21,6 +21,9 @@ Plug 'junegunn/fzf' " Fuzzy
 " Visual
 Plug 'mhinz/vim-startify' " StartScreen
 Plug 'itchyny/lightline.vim'
+let g:lightline = {
+            \'colorscheme': 'one',
+            \}
 Plug 'romgrk/doom-one.vim' " One of the best themes
 Plug 'jreybert/vimagit'
 
@@ -38,6 +41,10 @@ call plug#end()
 " Plugin variables
 set complete-=t " tag completion
 set complete-=i " include completion
+
+" Make bar show up
+set laststatus=2
+set noshowmode
 
 "LSP Stuff
 set completeopt=menu,menuone,noinsert,noselect
