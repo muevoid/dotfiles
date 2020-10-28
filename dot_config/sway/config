@@ -28,7 +28,16 @@ for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] sticky enable
 
 # Services
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec batterywarning
+
+# Sound and brightness keybinds
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+
+bindsym $mod+e exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+bindsym $mod+Shift+e exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
 #Default workspace type
 
@@ -54,9 +63,6 @@ titlebar_padding 5
 
     # Start your launcher
     bindsym $mod+d exec $menu
-
-    # Start emacs
-    bindsym $mod+e exec mvim
 
     # Take a screenshot
     bindsym $mod+g exec grim
