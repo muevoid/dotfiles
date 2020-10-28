@@ -33,7 +33,7 @@ exec batterywarning
 #Default workspace type
 
 # Wayland
-exec wbg /home/muevoid/Documents/Wallpapers/wallpaper.png
+exec wbg /home/muevoid/.local/share/wallpapers/wallpaper.png
 
 #smart_gaps on
 gaps inner 17
