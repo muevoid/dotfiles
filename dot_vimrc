@@ -21,13 +21,11 @@ Plug 'junegunn/fzf' " Fuzzy
 " Visual
 Plug 'mhinz/vim-startify' " StartScreen
 Plug 'itchyny/lightline.vim'
-Plug 'chrisbra/unicode.vim' " Insert unicode easy
 Plug 'romgrk/doom-one.vim' " One of the best themes
 Plug 'jreybert/vimagit'
 
 " Writing things
 Plug 'reedes/vim-pencil'
-Plug 'tpope/vim-abolish'
 Plug 'junegunn/limelight.vim' " Paragraphs go brrr
 Plug 'junegunn/goyo.vim' " Focused writing
 Plug 'vimwiki/vimwiki' " Org Mode but in vim(kind of)
