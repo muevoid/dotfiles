@@ -20,8 +20,7 @@ Plug 'junegunn/fzf' " Fuzzy
 
 " Visual
 Plug 'mhinz/vim-startify' " StartScreen
-Plug 'vim-airline/vim-airline' " Bar
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'chrisbra/unicode.vim' " Insert unicode easy
 Plug 'romgrk/doom-one.vim' " One of the best themes
 Plug 'jreybert/vimagit'
@@ -41,9 +40,6 @@ call plug#end()
 " Plugin variables
 set complete-=t " tag completion
 set complete-=i " include completion
-
-" Visual
-let g:airline#extensions#tabline#enabled = 1
 
 "LSP Stuff
 set completeopt=menu,menuone,noinsert,noselect
@@ -75,7 +71,6 @@ nn <silent> <Leader>g :!pdfroff -e % > $(echo %.pdf <bar> sed 's/roff\.//g')<CR>
 set background=dark
 colorscheme doom-one
 set termguicolors
-let g:airline_theme='atomic'
 
 " Spelling
 "set spell spelllang=en_us
