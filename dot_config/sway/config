@@ -28,7 +28,7 @@ for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] sticky enable
 
 # Services
-exec yambar
+#exec yambar
 exec batterywarning
 
 # Sound and brightness keybinds
@@ -184,25 +184,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-
-# Status Bar:
-#bar {
-#    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-#    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-#    gaps 3
-
-#    colors {
-#        statusline #F8F8F2
-#        background #282A36
-#       inactive_workspace #282A36 #282A36 #BFBFBF
-#    focused_workspace #44475A #44475A #F8F8F2
-#    }
-#}
 
 client.focused #6272A4 #6272A4 #F8F8F2
 client.unfocused #282A36 #282A36 #BFBFBF
