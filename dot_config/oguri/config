@@ -1,0 +1,5 @@
+[output eDP-1]
+image=/home/muevoid/.local/share/wallpapers/wallpaper.png
+filter=nearest
+scaling-mode=fill
+anchor=center

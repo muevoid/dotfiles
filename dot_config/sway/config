@@ -42,7 +42,7 @@ bindsym $mod+Shift+e exec light -A 5
 #Default workspace type
 
 # Wayland
-exec wbg /home/muevoid/.local/share/wallpapers/wallpaper.png
+exec oguri
 
 #smart_gaps on
 gaps inner 17
@@ -50,6 +50,7 @@ gaps outer 0
 hide_edge_borders smart
 default_border pixel 0
 for_window [app_id="^.*"] border pixel 0
+for_window [app_id="timefoot"] floating enable
 #for_window [app_id=".*"] title_format "<span font='Tewi 0'> </span>"
 titlebar_padding 5
 
@@ -60,6 +61,8 @@ titlebar_padding 5
 
     # Kill focused window
     bindsym $mod+q kill
+
+    bindsym $mod+Shift+t exec foot -W 40x2 --app-id=timefoot watch -n1 date
 
     # Start your launcher
     bindsym $mod+d exec $menu
