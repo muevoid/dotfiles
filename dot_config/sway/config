@@ -16,9 +16,9 @@ exec foot --server
 set $term footclient
 
 # Test borders
-border_images.focused /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
-border_images.unfocused /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
-border_images.focused_inactive /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
+#border_images.focused /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
+#border_images.unfocused /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
+#border_images.focused_inactive /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
 
 # Your preferred application launcher
 set $menu bemenu-run
@@ -45,11 +45,12 @@ bindsym $mod+Shift+e exec light -A 5
 exec oguri
 
 #smart_gaps on
-gaps inner 17
+gaps inner 3
 gaps outer 0
 hide_edge_borders smart
-default_border pixel 0
-for_window [app_id="^.*"] border pixel 0
+default_border pixel 2
+#default_border pixel 0
+#for_window [app_id="^.*"] border pixel 0
 for_window [app_id="timefoot"] floating enable
 #for_window [app_id=".*"] title_format "<span font='Tewi 0'> </span>"
 titlebar_padding 5

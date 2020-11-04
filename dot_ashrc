@@ -3,6 +3,9 @@ alias mvi="mpv --image-display-duration=inf"
 alias mpv="mpv --autofit=40%"
 alias pkgs="kiss l | cut -d ' ' -f 1"
 alias secure="socat tcp-listen:6697,reuseaddr,fork,bind=127.0.0.1 openssl-connect:irc.freenode.net:6697"
+function stream() {
+    mpv $1 --ytdl-raw-options="format=mp4"
+}
 alias kirc="kirc -s 127.0.0.1 -p 6697 -n muevoid -c kisslinux"
 #alias w3m="w3m duckduckgo.com"
 alias la="ls -A"
