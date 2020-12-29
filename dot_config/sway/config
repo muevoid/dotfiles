@@ -15,10 +15,14 @@ set $right l
 exec foot --server
 set $term footclient
 
-# Test borders
-#border_images.focused /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
-#border_images.unfocused /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
-#border_images.focused_inactive /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
+# Tell if xorg
+for_window [shell=".*"] title_format "%title : %shell"
+
+# Notifications
+exec mako
+
+
+#output eDP-1 mode --custom 1600x900
 
 # Your preferred application launcher
 set $menu bemenu-run
@@ -28,7 +32,6 @@ for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] sticky enable
 
 # Services
-#exec yambar
 exec batterywarning
 
 # Sound and brightness keybinds
@@ -42,17 +45,14 @@ bindsym $mod+Shift+e exec light -A 5
 #Default workspace type
 
 # Wayland
-exec oguri
+output "*" bg /home/muevoid/.local/share/wallpapers/wallpaper.png fill
 
 #smart_gaps on
-gaps inner 3
+gaps inner 0
 gaps outer 0
 hide_edge_borders smart
-default_border pixel 2
-#default_border pixel 0
-#for_window [app_id="^.*"] border pixel 0
+default_border normal 3
 for_window [app_id="timefoot"] floating enable
-#for_window [app_id=".*"] title_format "<span font='Tewi 0'> </span>"
 titlebar_padding 5
 
 # Key bindings

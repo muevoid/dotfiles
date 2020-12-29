@@ -1,13 +1,3 @@
-# Kiss Repos
-
-export KISS_PATH=''
-KISS_PATH=$KISS_PATH:$HOME/Documents/repo/core
-KISS_PATH=$KISS_PATH:$HOME/Documents/dvdrepo
-KISS_PATH=$KISS_PATH:$HOME/Documents/repo/extra
-KISS_PATH=$KISS_PATH:$HOME/Documents/repo/base
-KISS_PATH=$KISS_PATH:$HOME/Documents/repo/game
-KISS_PATH=$KISS_PATH:$HOME/Documents/repo/wayland
-
 # Wayland socket
 if test -z "${XDG_RUNTIME_DIR}"; then
     export XDG_RUNTIME_DIR=/tmp/01-runtime-dir
@@ -25,7 +15,7 @@ PATH=$HOME/.local/bin:$PATH
 export ENV="$HOME/.ashrc"
 export BROWSER="wyeb"
 export EDITOR="vim"
-export VISUAL="foot vim"
+#export VISUAL="foot vim"
 export USER="muevoid"
 export HOSTNAME="muevoid"
 export PF_INFO="ascii title os host kernel uptime pkgs memory editor shell palette"
@@ -37,6 +27,7 @@ export LESSHISTFILE="-"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export GOPATH="$XDG_DATA_HOME/go"
 
 # Wayland
@@ -46,8 +37,11 @@ export GDK_BACKEND=wayland
 # Fix fzf
 export FZF_DEFAULT_COMMAND='set -o foobar; find * -type f'
 
-# Build Environment
+# GlibC
+export VOIDNSRUN_DIR=/glibc
+export VOIDNSUNDO_BIN=/usr/local/bin/voidnsundo
 
+# Build Environment
 export CC="clang"
 export CXX="clang++"
 export MAKEFLAGS="-j8"

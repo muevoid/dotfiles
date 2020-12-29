@@ -8,12 +8,19 @@ function stream() {
 }
 alias kirc="kirc -s 127.0.0.1 -p 6697 -n muevoid -c kisslinux"
 #alias w3m="w3m duckduckgo.com"
+function idk() {
+clear && pfetch && echo -e "\033[32m-------------------------------------------\033[0m" && ls --color -w 50 && echo -e "\033[32m-------------------------------------------\033[0m" && echo -e "\033[35mI don't know what else to put \033[32mhere \033[35mlol\033[0m" && echo -e "\033[32m------------------------------------------ \033[0m"
+}
+
+alias ls="ls --color"
 alias la="ls -A"
 alias l="ls -CF"
 alias ..="cd .."
 alias mv="mv -i"
 alias rm="rm -i"
 alias bemenu-run="bemenu-run --nb=#282A36 --nf=#F8F8F2 --tb=#282A36 --tf=#F8F8F2 --hb=#6272A4 --hf=#F8F8F2 --sb=#6272A4"
+alias terraria="voidnsrun env SDL_VIDEODRIVER=x11 /home/muevoid/GOG/Terraria/game/Terraria.bin.x86_64 /glprofile:es3"
+alias terrariamod="nice -n 20 voidnsrun env SDL_VIDEODRIVER=x11 /home/muevoid/GOG/Terraria/game/tModLoader/tModLoader /glprofile:es3"
 
 # Nice colors
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
