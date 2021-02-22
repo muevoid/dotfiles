@@ -13,25 +13,46 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 exec foot --server
+
 set $term footclient
+
+# Audio
+exec pipewire
+
+bindsym XF86TouchpadToggle input type:touchpad events toggle enabled disabled
 
 # Tell if xorg
 for_window [shell=".*"] title_format "%title : %shell"
 
+#input * {
+#   left_handed enabled
+#}
+
 # Notifications
 exec mako
-
-
 #output eDP-1 mode --custom 1600x900
+# Test borders
+#border_images.focused /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
+#border_images.unfocused /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
+#border_images.focused_inactive /home/muevoid/.local/share/wallpapers/rounded_and_shadows.png
+
+# Kde connect
+exec kdeconnect-indicator
+
+input 10429:2058:UGTABLET_11.6_inch_PenDisplay {
+    map_to_output HDMI-A-2
+}
 
 # Your preferred application launcher
-set $menu bemenu-run
+#set $menu bemenu-run
+set $menu wofi -G -I -l left -m -W 15% -H 100% -t footclient -p "Void Bar" --show drun
 
 #Make certain applications floating or stick etc
 for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] sticky enable
 
 # Services
+#exec yambar
 exec batterywarning
 
 # Sound and brightness keybinds
@@ -45,18 +66,22 @@ bindsym $mod+Shift+e exec light -A 5
 #Default workspace type
 
 # Wayland
-output "*" bg /home/muevoid/.local/share/wallpapers/wallpaper.png fill
+output "*" bg /home/muevoid/.local/share/wallpapers/dragon.jpg fill
 
 #smart_gaps on
 gaps inner 0
 gaps outer 0
-hide_edge_borders smart
-default_border normal 3
+#hide_edge_borders smart
+default_border pixel 1
+#for_window [app_id="^.*"] border pixel 0
 for_window [app_id="timefoot"] floating enable
+#for_window [app_id=".*"] title_format "<span font='Tewi 0'> </span>"
 titlebar_padding 5
 
 # Key bindings
     
+    bindsym $mod+a exec swaymsg output eDP-1 disable
+    bindsym $mod+w exec swaymsg output eDP-1 enable
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -78,13 +103,16 @@ titlebar_padding 5
     # mouse button for dragging.
     floating_modifier $mod normal
 
+    bindsym $mod+s exec pkill -SIGUSR1 waybar
+
     # Reload the configuration file
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+q exec wlogout
     #bindsym $mod+Shift+q exec swaynag -t dracula -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-    bindsym $mod+Shift+q exec wayherb "Dismiss to quit sway" && swaymsg exit
+#   bindsym $mod+Shift+q exec wayherb "Dismiss to quit sway" && swaymsg exit
 #
 # Moving around:
 #
@@ -156,7 +184,7 @@ titlebar_padding 5
     bindsym $mod+Shift+space floating toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    #bindsym $mod+a focus parent
 
 # Scratchpad:
 
@@ -189,6 +217,10 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-client.focused #6272A4 #6272A4 #F8F8F2
-client.unfocused #282A36 #282A36 #BFBFBF
-client.focused_inactive #44475A #44475A #F8F8F2
+bar {
+    swaybar_command waybar
+}
+
+client.focused #35FF69 #35FF69 #080708
+client.unfocused #A06CD5 #A06CD5 #FDFFFC
+client.focused_inactive #A06CD5 #A06CD5 #FDFFFC

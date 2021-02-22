@@ -2,6 +2,9 @@
 call plug#begin('~/.vim/plugged')
 
 " Dev
+Plug 'fatih/vim-go'
+Plug 'arcticicestudio/nord-vim'
+Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'preservim/tagbar'
 Plug 'ryanoasis/vim-devicons'
@@ -17,6 +20,7 @@ Plug 'natebosch/vim-lsc'
                 \}
 
 Plug 'junegunn/fzf' " Fuzzy
+Plug 'igankevich/mesonic'
 
 " Visual
 Plug 'mhinz/vim-startify' " StartScreen
@@ -24,7 +28,6 @@ Plug 'itchyny/lightline.vim'
 let g:lightline = {
             \'colorscheme': 'one',
             \}
-Plug 'romgrk/doom-one.vim' " One of the best themes
 Plug 'jreybert/vimagit'
 Plug 'ap/vim-css-color' " Preview colors
 
@@ -75,7 +78,7 @@ nn <silent> <Leader>g :!pdfroff -ms -e % > $(echo %.pdf <bar> sed 's/roff\.//g')
 
 " Colorscheme
 set background=dark
-colorscheme doom-one
+colorscheme nord
 set termguicolors
 
 " Spelling
@@ -83,7 +86,7 @@ set termguicolors
 
 " Sane defaults
 set relativenumber " Make the number to current line
-set linebreak
+" set linebreak
 set showbreak=+++
 set showmatch
 set encoding=UTF-8  
@@ -100,10 +103,20 @@ set shiftwidth=4 " 4 Spaces
 set smartindent
 set smarttab
 set softtabstop=4
-
-set textwidth=80
-set colorcolumn=80
-highlight ColorColumn ctermbg=darkgrey
+if has("gui_running")
+set guioptions -=m
+set guioptions -=T
+set guioptions -=l
+set guioptions -=b
+set guioptions -=r
+set guioptions -=L
+set guioptions -=b
+set guioptions -=R
+set guioptions +=d
+endif
+" set textwidth=80
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=darkgrey
 
 set confirm
 set ruler

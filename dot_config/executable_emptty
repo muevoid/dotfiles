@@ -1,0 +1,9 @@
+#!/bin/sh
+
+Name=Sway
+Exec=/usr/bin/sway
+Environment=wayland
+Selection=true
+
+exec dbus-launch sway
+

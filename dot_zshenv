@@ -1,0 +1,46 @@
+# Wayland socket
+#if test -z "${XDG_RUNTIME_DIR}"; then
+#    export XDG_RUNTIME_DIR=/tmp/01-runtime-dir
+#    if ! test -d "${XDG_RUNTIME_DIR}"; then
+#        mkdir "${XDG_RUNTIME_DIR}"
+#    fi
+#fi
+
+# Path
+PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+
+# Aliases and such
+#export ENV="$HOME/.ashrc"
+export BROWSER="wyeb"
+export EDITOR="vim"
+#export VISUAL="foot vim"
+export USER="muevoid"
+export HOSTNAME="muevoid"
+export PF_INFO="ascii title os host kernel uptime pkgs memory editor shell palette"
+export BEMENU_OPTS="--nb=#282A36 --nf=#F8F8F2 --tb=#282A36 --tf=#F8F8F2 --hb=#6272A4 --hf=#F8F8F2 --sb=#6272A4"
+export PASH_CLIP="wl-copy -o"
+
+# Home clean up
+export LESSHISTFILE="-"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+export GOPATH="$XDG_DATA_HOME/go"
+
+# Wayland
+export SDL_VIDEODRIVER=wayland
+export GDK_BACKEND=wayland
+export MOZ_ENABLE_WAYLAND=1
+export XDG_CURRENT_DESKTOP=sway
+export CALIBRE_USE_DARK_PALETTE=YES
+
+# Fix fzf
+export FZF_DEFAULT_COMMAND='set -o foobar; find * -type f'
+
+# Build Environment
+export CC="clang"
+export CXX="clang++"
+export MAKEFLAGS="-j8"
+#export CFLAGS="-march=x86-64 -mtune=generic -pipe -Os"
+#export CXXFLAGS="-march=x86-64 -mtune=generic -pipe -Os"
